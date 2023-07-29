@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [DashboardController::class, 'index'])->name('index');
+Route::get('/dashboard/user', function () {
+    return view('dashboard.User.dashboard');
+})->middleware('auth')->name('dashboard.user');
+require __DIR__.'/auth.php';
